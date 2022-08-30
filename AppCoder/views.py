@@ -8,13 +8,13 @@ import datetime
 # Create your views here.
 
 def inicio(request):
-    return HttpResponse('vista inicio')
+    return render(request,'AppCoder/inicio.html')
 
 def Paises(request):
-    return HttpResponse('vista paises')
+    return render(request,'AppCoder/paises.html')
 
 def Empresas(request):
-    return HttpResponse('vista empresas')
+    return render(request,'AppCoder/empresas.html')
 
 def Autos(request):
-    return HttpResponse('vista autos')
+    return render(request,'AppCoder/autos.html')
