@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from django.template import loader
-from AppCoder.models import Familiar
 
 import datetime
 
 # Create your views here.
 
-def inicio(request):
+def Inicio(request):
     return render(request,'AppCoder/inicio.html')
 
 def Paises(request):
