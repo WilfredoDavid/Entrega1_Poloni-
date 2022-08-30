@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 12%;
+  padding: 4px;
+  height: 140px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<h1>Primer MTV. Familia de Yamil</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h5>Nombre</h5>
+    <p>{% for n in Nombres %}
+        {{ n }} </br>
+        {% endfor %}
+    </p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h5>Apellido</h5>
+    <p>{% for n in Apellidos %}
+        {{ n }} </br>
+        {% endfor %}
+    </p>  </div>
+    <div class="column" style="background-color:#ccc;">
+    <h5>Parentesco</h5>
+    <p>{% for n in Parentescos%}
+        {{ n }} </br>
+        {% endfor %}</p>
+  </div>
+    <div class="column" style="background-color:#ddd;">
+    <h5>Fecha de Nacimiento</h5>
+    <p>{% for n in Fechas_de_Nacimiento %}
+        {{ n }} </br>
+        {% endfor %}</p>
+  </div>
+    <div class="column" style="background-color:#eee;">
+    <h5>Edad</h5>
+    <p>{% for n in Edades %}
+        {{ n }} </br>
+        {% endfor %}</p>
+  </div>
+    <div class="column" style="background-color:#fee;">
+    <h5>Comentario</h5>
+    <p>{% for n in Nota %}
+        {{ n }} </br>
+        {% endfor %}</p>
+  </div>
+</div>
+
+</body>
+</html>
