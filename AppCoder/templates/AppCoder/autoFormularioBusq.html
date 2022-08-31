@@ -1,8 +1,23 @@
+{% extends "AppCoder/padre.html"%}
+{%load static%}
+{% block titulo_de_pagina%}
+<h1 class="mb-5">Formulario de Busqueda de Datos</h1>
+{%endblock%}
+{% block contenido %}
+
+{% if Formulario_auto.errors %}
+<p style="color: red;"> Están mal los datos, revisar </p>
+{% endif %} 
+<h1> Ingrese el parametro de busqueda</h1>
 <form action="/AppCoder/buscar" method="GET">
 
-    <input type="text" name="modelo" id="modelo">
+  <p> Busqueda por Modelo <input type="text" name="modelo" id="modelo"></p> 
 
     <input type="submit" value="Buscar">
 
 
 </form>
+{%endblock%}
+
+
+

@@ -34,12 +34,12 @@ def autoFormulario(request):
              auto = Auto (marca=informacion['marca'], modelo =informacion['modelo'], anio_lanzamiento = informacion['anio_lanzamiento'])
              auto.save()
         
-             return render(request, "AppCoder/inicio.html")
+             return render(request, "AppCoder/inicio.html",{'mensaje':'datos cargados'})
 
     else:
 
         Formulario_auto= AutoFormulario()
-    
+
     return render(request, "AppCoder/Formulario_auto.html",{"Formulario_auto":Formulario_auto})
 
 def autoFormularioBusq(request):
@@ -47,7 +47,13 @@ def autoFormularioBusq(request):
     return render(request, "AppCoder/autoFormularioBusq.html")
 
 def buscar(request):
-    modelob=request.GET.get("modelob")
-    autos=Auto.objects.filter(modelo=modelob)
-    return render(request, "Appcoder/resultadosBusqueda.html",{"autos":autos})
+    if request.GET['modelo']:
+        modelo=request.GET["modelo"]
+        autos=Auto.objects.filter(modelo=modelo)
+        if len(autos)!=0:
+             return render(request, "Appcoder/resultadoBusqueda.html",{"autos":autos})
+        else:
+             return render(request, "Appcoder/resultadoBusqueda.html",{"mensaje":"No hay autos del modelo ingresado"})
+    else:
+       return render(request, "Appcoder/resultadoBusqueda.html",{"mensaje":"No se ingreso datos"})
 
