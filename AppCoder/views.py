@@ -31,7 +31,7 @@ def autoFormulario(request):
         if Formulario_auto.is_valid:
 
              informacion = Formulario_auto.cleaned_data 
-             auto = Auto (marca=informacion['marca'], modelo =informacion['modelo'], anio_lanzamiento = informacion['anio_lanzamiento'])
+             auto = Autos (marca=informacion['marca'], modelo =informacion['modelo'], anio_lanzamiento = informacion['anio_lanzamiento'])
              auto.save()
         
              return render(request, "AppCoder/inicio.html",{'mensaje':'datos cargados'})
@@ -49,7 +49,7 @@ def autoFormularioBusq(request):
 def buscar(request):
     if request.GET['modelo']:
         modelo=request.GET["modelo"]
-        autos=Auto.objects.filter(modelo=modelo)
+        autos=Autos.objects.filter(modelo=modelo)
         if len(autos)!=0:
              return render(request, "Appcoder/resultadoBusqueda.html",{"autos":autos})
         else:
