@@ -3,10 +3,18 @@
 {% block titulo_de_pagina%}
 <h1 class="mb-5">Resultado Busqueda</h1>
 {%endblock%}
-{% block contenido %}
-{% for curso in cursos %}
-<h2> {{autos.modelo}}</h2>
-<h2> {{autos.anio_lanzamiento}}</h2>
-<h2> {{autos.marca}}</h2>
 
-{%endblock%}
+{% block contenido %}
+
+{% if mensaje %}
+<h2>{{mensaje}}</h2>
+{%else%}
+<h1>Resultado de Busqueda</h1>
+{% for auto in autos %}
+<h2> {{auto.modelo}}</h2>
+<h2> {{auto.anio_lanzamiento}}</h2>
+<h2> {{auto.marca}}</h2>
+
+{% endfor %}
+{%endif%}
+{% endblock %}
