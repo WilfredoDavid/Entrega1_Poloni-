@@ -6,5 +6,6 @@ urlpatterns = [
     path('paises', Paises, name='paises'),
     path('empresas', Empresas, name='empresas'),
     path('autos', Autos, name='autos'),
+    path('autoFormulario', autoFormulario, name='AutoFormulario1'),
 
 ]

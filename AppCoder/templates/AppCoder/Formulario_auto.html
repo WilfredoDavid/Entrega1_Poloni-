@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html"%}
+{%load static%}
+{% block titulo_de_pagina%}
+<h1 class="mb-5">Formulario de Ingreso de Datos</h1>
+{%endblock%}
+{% block contenido %}
+
+{% if Formulario_auto.errors %}
+<p style="color: red;"> Están mal los datos, revisar </p>
+{% endif %} 
+
+    <form action=""method='POST'> {% csrf_token %}
+        <table>
+            <h1 class="mb-5"> Ingrese Datos:</h1>
+   
+            {{Formulario_auto.as_table }}
+
+        </table>
+    
+        <input type="submit", value="Enviar">
+
+    </form>
+{%endblock%}
