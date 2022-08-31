@@ -7,5 +7,7 @@ urlpatterns = [
     path('empresas', Empresas, name='empresas'),
     path('autos', Autos, name='autos'),
     path('autoFormulario', autoFormulario, name='AutoFormulario1'),
+    path('autoFormularioBusq', autoFormularioBusq, name='autoFormularioBusq'),
+    path('buscar', buscar),
 
 ]

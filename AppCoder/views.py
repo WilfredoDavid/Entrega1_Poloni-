@@ -41,3 +41,13 @@ def autoFormulario(request):
         Formulario_auto= AutoFormulario()
     
     return render(request, "AppCoder/Formulario_auto.html",{"Formulario_auto":Formulario_auto})
+
+def autoFormularioBusq(request):
+
+    return render(request, "AppCoder/autoFormularioBusq.html")
+
+def buscar(request):
+    modelob=request.GET.get("modelob")
+    autos=Auto.objects.filter(modelo=modelob)
+    return render(request, "Appcoder/resultadosBusqueda.html",{"autos":autos})
+

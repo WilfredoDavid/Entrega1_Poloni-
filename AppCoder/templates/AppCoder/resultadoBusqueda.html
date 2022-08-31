@@ -1,0 +1,12 @@
+{% extends "AppCoder/padre.html"%}
+{%load static%}
+{% block titulo_de_pagina%}
+<h1 class="mb-5">Resultado Busqueda</h1>
+{%endblock%}
+{% block contenido %}
+{% for curso in cursos %}
+<h2> {{autos.modelo}}</h2>
+<h2> {{autos.anio_lanzamiento}}</h2>
+<h2> {{autos.marca}}</h2>
+
+{%endblock%}
